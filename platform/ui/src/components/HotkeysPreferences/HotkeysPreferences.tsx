@@ -49,7 +49,7 @@ const HotkeysPreferences = ({
   };
 
   return (
-    <div className="flex flex-row justify-center">
+    <div className="grid_ flex flex-row justify-center">
       <div className="flex w-full flex-row justify-evenly">
         {splitedHotkeys.map((hotkeys, index) => {
           return (

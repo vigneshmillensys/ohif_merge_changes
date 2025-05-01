@@ -69,7 +69,7 @@
   width: 39px;
 }
 .scroll .scroll-holder .imageSlider::-webkit-slider-thumb:active {
-  background-color: #20a5d6;
+  background-color: #fff;
   cursor: -webkit-grabbing;
 }
 .scroll .scroll-holder .imageSlider::-moz-range-thumb {

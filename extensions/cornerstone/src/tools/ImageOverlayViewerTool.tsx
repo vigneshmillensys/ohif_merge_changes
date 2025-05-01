@@ -168,8 +168,10 @@ class ImageOverlayViewerTool extends AnnotationDisplayTool {
         .filter(overlay => overlay.pixelData)
         .map(async (overlay, idx) => {
           let pixelData = null;
-          if (overlay.pixelData.Value) {
-            pixelData = overlay.pixelData.Value;
+          // if (overlay.pixelData.Value) {
+          //   pixelData = overlay.pixelData.Value;
+          if (overlay.pixelData) {
+            pixelData = overlay.pixelData;
           } else if (overlay.pixelData instanceof Array) {
             pixelData = overlay.pixelData[0];
           } else if (overlay.pixelData.retrieveBulkData) {
@@ -231,7 +233,8 @@ class ImageOverlayViewerTool extends AnnotationDisplayTool {
    * @returns
    */
   private _renderOverlayToDataUrl({ width, height }, color, pixelDataRaw) {
-    const pixelDataView = new DataView(pixelDataRaw);
+    // const pixelDataView = new DataView(pixelDataRaw);
+    const pixelDataView = new DataView(pixelDataRaw.buffer)
     const totalBits = width * height;
 
     const canvas = document.createElement('canvas');
@@ -242,24 +245,39 @@ class ImageOverlayViewerTool extends AnnotationDisplayTool {
     ctx.clearRect(0, 0, width, height); // make it transparent
     ctx.globalCompositeOperation = 'copy';
 
-    const imageData = ctx.getImageData(0, 0, width, height);
-    const data = imageData.data;
-    for (let i = 0, bitIdx = 0, byteIdx = 0; i < totalBits; i++) {
-      if (pixelDataView.getUint8(byteIdx) & (1 << bitIdx)) {
-        data[i * 4] = color[0];
-        data[i * 4 + 1] = color[1];
-        data[i * 4 + 2] = color[2];
-        data[i * 4 + 3] = color[3];
-      }
+    // const imageData = ctx.getImageData(0, 0, width, height);
+    // const data = imageData.data;
+    // for (let i = 0, bitIdx = 0, byteIdx = 0; i < totalBits; i++) {
+    //   if (pixelDataView.getUint8(byteIdx) & (1 << bitIdx)) {
+    //     data[i * 4] = color[0];
+    //     data[i * 4 + 1] = color[1];
+    //     data[i * 4 + 2] = color[2];
+    //     data[i * 4 + 3] = color[3];
+    //   }
 
-      // next bit, byte
-      if (bitIdx >= 7) {
-        bitIdx = 0;
-        byteIdx++;
-      } else {
-        bitIdx++;
+    //   // next bit, byte
+    //   if (bitIdx >= 7) {
+    //     bitIdx = 0;
+    //     byteIdx++;
+    //   } else {
+    //     bitIdx++;
+    const arrayBuffer = new ArrayBuffer(width * height * 4);
+    const pixels = new Uint8ClampedArray(arrayBuffer);    
+
+    let mm = 0;
+    for (let y = 0; y < height; y++) {
+      for (let x = 0; x < width; x++) {
+        if (pixelDataRaw[mm] > 0) {
+          const i = (y * width + x) * 4;
+          pixels[i] = color[0]; // red
+          pixels[i + 1] = color[1]; // green
+          pixels[i + 2] = color[2]; // blue
+          pixels[i + 3] = color[3]; // alpha
+        }
+        mm++;
       }
     }
+    const imageData = new ImageData(pixels, width, height);
     ctx.putImageData(imageData, 0, 0);
 
     return canvas.toDataURL();

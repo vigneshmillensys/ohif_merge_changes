@@ -19,4 +19,11 @@ const detectionOptions = {
   htmlTag: document.documentElement,
 };
 
-export { debugMode, detectionOptions };
+const config = {
+  //baseUrl: 'http://localhost:44301/', //process.env.NODE_ENV === 'production' ? 'https://neurevealpacs.ai:4443' : 'http://localhost:4444',
+  baseUrl: 'https://neurevealpacs.ai:4443/', //process.env.NODE_ENV === 'production' ? 'https://neurevealpacs.ai:4443' : 'http://localhost:4444',
+  //reportUrl: 'https://neurevealpacs.ai/DocumentService/',
+  reportUrl: 'https://millensysonline.net/MILLENSYS/MiViewer/',
+};
+
+export { debugMode, detectionOptions, config };

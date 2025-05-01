@@ -383,7 +383,7 @@ function createDicomWebApi(dicomWebConfig: DicomWebConfig, servicesManager) {
         instance.imageId = imageId;
         instance.wadoRoot = dicomWebConfig.wadoRoot;
         instance.wadoUri = dicomWebConfig.wadoUri;
-
+        metadataProvider._checkBulkDataAndInlineBinaries?.(instance);
         metadataProvider.addImageIdToUIDs(imageId, {
           StudyInstanceUID,
           SeriesInstanceUID: instance.SeriesInstanceUID,

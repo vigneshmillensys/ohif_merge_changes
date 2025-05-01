@@ -7,6 +7,7 @@ import fetchPaletteColorLookupTableData from '../utils/metadataProvider/fetchPal
 import toNumber from '../utils/toNumber';
 import combineFrameInstance from '../utils/combineFrameInstance';
 import formatPN from '../utils/formatPN';
+import fetchOverlayData from '../utils/metadataProvider/fetchOverlayData';
 const { calibratedPixelSpacingMetadataProvider, getPixelSpacingInformation } = utilities;
 
 class MetadataProvider {
@@ -36,6 +37,9 @@ class MetadataProvider {
 
     this.customMetadata.get(type)[imageURI] = metadata;
   }
+  _checkBulkDataAndInlineBinaries(instance, server) {     
+        fetchOverlayData(instance, server);
+      }
 
   _getInstance(imageId) {
     if (!imageId) {

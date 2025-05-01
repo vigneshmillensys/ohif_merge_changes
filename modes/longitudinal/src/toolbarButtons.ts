@@ -18,6 +18,29 @@ export const setToolActiveToolbar = {
     toolGroupIds: ['default', 'mpr', 'SRToolGroup', 'volume3d'],
   },
 };
+const keyImageButton = {
+  id: 'keyImageSelector',
+  uiType: 'ohif.radioGroup',
+  props: {
+    id: 'keyImageSelector',
+    icon: 'tool-layout',
+    label: 'Default',
+    tooltip: 'Default',
+    commands: [
+      {
+        commandName: 'setKeyImageCommand',
+        //commandOptions: { imageId: 'default' }, // Simplified default
+        context: 'DEFAULT',
+      },
+    ],
+    // evaluateActiveClass: ({ servicesManager }) => {
+    //   const { hangingProtocolService } = servicesManager.services;
+    //   const activeProtocol = hangingProtocolService.getActiveProtocol();
+    //   return activeProtocol?.id === 'default' ? 'active' : '';
+    // },
+  },
+};
+
 
 const toolbarButtons: Button[] = [
   // sections
@@ -27,6 +50,16 @@ const toolbarButtons: Button[] = [
     props: {
       buttonSection: 'measurementSection',
       groupId: 'MeasurementTools',
+    },
+  },
+  {
+  id: 'keyImageSelector',
+   uiType: 'ohif.radioGroup',
+    props: {
+      icon: 'eye-visible',
+      label: 'Set As Key Image',
+      commands: 'sendSOPInstanceUID',
+      evaluate: 'evaluate.action',
     },
   },
   {

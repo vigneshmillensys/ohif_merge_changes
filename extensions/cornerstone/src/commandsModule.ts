@@ -16,7 +16,6 @@ import {
 import * as cornerstoneTools from '@cornerstonejs/tools';
 import * as labelmapInterpolation from '@cornerstonejs/labelmap-interpolation';
 import { ONNXSegmentationController } from '@cornerstonejs/ai';
-
 import { Types as OhifTypes, utils } from '@ohif/core';
 import i18n from '@ohif/i18n';
 import {
@@ -36,7 +35,7 @@ import CornerstoneViewportDownloadForm from './utils/CornerstoneViewportDownload
 import { updateSegmentBidirectionalStats } from './utils/updateSegmentationStats';
 import { generateSegmentationCSVReport } from './utils/generateSegmentationCSVReport';
 import { getUpdatedViewportsForSegmentation } from './utils/hydrationUtils';
-
+import { config } from '../../../platform/i18n/src/config';
 const { DefaultHistoryMemo } = csUtils.HistoryMemo;
 const toggleSyncFunctions = {
   imageSlice: toggleImageSliceSync,
@@ -792,6 +791,49 @@ function commandsModule({
         viewport.setViewPresentation({ rotation: newRotation });
         viewport.render();
       }
+    },
+    sendSOPInstanceUIDCommand: () => {
+      const { displaySetService, viewportGridService, cornerstoneViewportService } = servicesManager.services;
+    
+      const activeViewportId = viewportGridService.getState().activeViewportId;
+      const vp = cornerstoneViewportService.getCornerstoneViewport(activeViewportId);
+      const imageIndex = vp.getCurrentImageIdIndex();
+      console.log('imageIndex = ' + imageIndex);
+    
+      const displaySetUIDs = viewportGridService.getDisplaySetsUIDsForViewport(activeViewportId);
+    
+      if (!displaySetUIDs?.length) {
+        return;
+      }
+    
+      const displaySets = displaySetUIDs.map(displaySetService.getDisplaySetByUID);
+    
+      if (!displaySets[0]?.instances?.length) {
+        console.warn('No images found in display set.');
+        return;
+      }
+    
+      const sopUIDs = displaySets[0].instances[imageIndex].SOPInstanceUID;
+    
+      console.log('uid = ' + sopUIDs);
+      console.log('config.reportUrl = ' + config.reportUrl);
+    
+      fetch(config.reportUrl + 'ImageKeyHandler/CViewer.MillenSys', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ instanceUid: sopUIDs, isKey: true }),
+      })
+        .then(res => res.json())
+        .then(data => {
+          console.log('API Response:', data);
+          alert('SOPInstanceUIDs sent successfully! ' + data);
+        })
+        .catch(err => {
+          console.error('API Error:', err);
+          alert('Failed to send SOPInstanceUIDs.');
+        });
     },
     flipViewportHorizontal: () => {
       const enabledElement = _getActiveViewportEnabledElement();
@@ -1818,6 +1860,9 @@ function commandsModule({
     rotateViewportCCW: {
       commandFn: actions.rotateViewport,
       options: { rotation: -90 },
+    },
+    sendSOPInstanceUID:{
+    commandFn: actions.sendSOPInstanceUIDCommand,
     },
     incrementActiveViewport: {
       commandFn: actions.changeActiveViewport,

@@ -153,11 +153,9 @@ const createRoutes = ({
             key={i}
             path={route.path}
             element={
-              <PrivateRoute
-                handleUnauthenticated={() => userAuthenticationService.handleUnauthenticated()}
-              >
+              //<PrivateRoute handleUnauthenticated={() => userAuthenticationService.handleUnauthenticated()}>
                 <RouteWithErrorBoundary route={route} />
-              </PrivateRoute>
+              // </PrivateRoute>
             }
           ></Route>
         ) : (

@@ -92,15 +92,23 @@ function modeFactory({ modeConfiguration }) {
 
       toolbarService.addButtons(toolbarButtons);
       toolbarService.createButtonSection('primary', [
-        'MeasurementTools',
+        'StackScroll',
         'Zoom',
         'Pan',
-        'TrackballRotate',
         'WindowLevel',
+        'Reset',
+        'MeasurementTools',
+        'TrackballRotate',
+        'Angle',
+        'cine',
+        'ArrowAnnotate',
+        'invert',
         'Capture',
         'Layout',
         'Crosshairs',
+        'OpTools',
         'MoreTools',
+        
       ]);
 
       toolbarService.createButtonSection('measurementSection', [
@@ -288,3 +296,5 @@ const mode = {
 
 export default mode;
 export { initToolGroups, toolbarButtons };
+
+

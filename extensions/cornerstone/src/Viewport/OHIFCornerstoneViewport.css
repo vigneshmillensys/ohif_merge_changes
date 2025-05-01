@@ -17,3 +17,27 @@
      when the magnify tool is near the sides/corners of the page */
   overflow: hidden;
 }
+
+/* 3D perspective and transform origin */
+.cornerstone-viewport-element .viewport-element {
+  perspective: 500px !important;
+  perspective-origin: 50% 50% !important;
+  transform-origin: center center !important;
+}
+
+/* Smooth transform/zoom transition */
+.cornerstone-viewport-element .viewport-element canvas[data-zoom] {
+  transition: transform 0.2s ease;
+  -webkit-transition: transform 0.2s ease;
+  -moz-transition: transform 0.2s ease;
+  -ms-transition: transform 0.2s ease;
+  -o-transition: transform 0.2s ease;
+
+  /* Optional: dynamic zoom via attribute (disabled for now)
+  transform: scale(attr(data-zoom));
+  -webkit-transform: scale(attr(data-zoom));
+  -moz-transform: scale(attr(data-zoom));
+  -ms-transform: scale(attr(data-zoom));
+  -o-transform: scale(attr(data-zoom));
+  */
+}

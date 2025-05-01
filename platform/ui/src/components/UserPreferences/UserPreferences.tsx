@@ -94,6 +94,8 @@ const UserPreferences = ({
             onChange={onLanguageChangeHandler}
             options={availableLanguages}
             value={state.language}
+            className='selection'
+
           />
         </div>
       </Section>

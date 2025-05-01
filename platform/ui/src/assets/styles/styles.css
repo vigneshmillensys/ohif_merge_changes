@@ -1,5 +1,5 @@
 /* CUSTOM OHIF SCROLLBAR */
-.ohif-scrollbar {
+/* .ohif-scrollbar {
   scrollbar-color: #173239 transparent;
   overflow-y: auto;
 }
@@ -36,6 +36,72 @@
 }
 
 /* INVISIBLE SCROLLBAR */
+/*.invisible-scrollbar {
+  scrollbar-width: none;
+}
+
+.invisible-scrollbar::-webkit-scrollbar {
+  @apply hidden;
+}
+
+.invisible-scrollbar::-webkit-scrollbar-track {
+  @apply hidden;
+}
+
+.invisible-scrollbar::-webkit-scrollbar-thumb {
+  @apply hidden;
+}
+
+.invisible-scrollbar::-webkit-scrollbar-thumb:window-inactive {
+  @apply hidden;
+} */
+*:root {
+  --color-primary: rgb(59, 149, 237);
+  --color-bg: rgb(7, 91, 173);
+  --color-bg1: #2e3267;
+  --color-bg2: #424890;
+  --color-bg-grad: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
+  --color-bg-grad-2: radial-gradient(circle at 10% 20%, rgb(54, 147, 240) 0%, rgb(13, 93, 173) 90%);
+}
+
+/* CUSTOM OHIF SCROLLBAR */
+.ohif-scrollbar {
+  scrollbar-color: #777171 transparent;
+  overflow-y: auto;
+}
+
+.ohif-scrollbar-stable-gutter {
+  scrollbar-gutter: stable;
+}
+
+.study-min-height {
+  min-height: 450px;
+}
+
+.ohif-scrollbar:hover {
+  overflow-y: auto;
+}
+
+.ohif-scrollbar::-webkit-scrollbar {
+  scrollbar-width: thin;
+}
+
+.ohif-scrollbar::-webkit-scrollbar-track {
+  @apply rounded;
+}
+
+.ohif-scrollbar::-webkit-scrollbar-thumb {
+  @apply rounded;
+  @apply bg-secondary-dark;
+  background-color: #777171;
+}
+
+.ohif-scrollbar::-webkit-scrollbar-thumb:window-inactive {
+  @apply bg-secondary-dark;
+  background-color: #777171;
+}
+
+/* INVISIBLE SCROLLBAR */
 .invisible-scrollbar {
   scrollbar-width: none;
 }
@@ -54,4 +120,735 @@
 
 .invisible-scrollbar::-webkit-scrollbar-thumb:window-inactive {
   @apply hidden;
+}
+
+.first-search-text-field {
+  margin-left: 15px !important;
+}
+
+.search-text-field {
+  width: 90%;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 8px !important;
+  background-color: #3d3d3d !important;
+  border: solid 2px #444853 !important;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  -webkit-text-fill-color: #fff !important;
+}
+
+.search-text-field:focus {
+  outline: none !important;
+  /* border: 1px solid #ffa41f; */
+  border: 1px solid var(--color-bg2);
+  /* box-shadow: 0 0 5px #ffa41f; */
+  box-shadow: 0 0 5px var(--color-bg2);
+}
+
+/* button{
+  background: linear-gradient(256deg, #ffa41f 0%, #ff7030 99%, #ffa41f 100%) !important;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  -webkit-text-fill-color: #fff !important;
+
+} */
+.ag-header-group-text {
+  /* color: #ff9933; */
+  color: var(--color-primary) !important;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+}
+
+.ag-header-group-cell-label {
+  line-height: 15px;
+  font-size: 15px;
+  /* color: #f93; */
+  color: var(--color-primary) !important;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  /* background-color: #252830; */
+  background-color: black;
+  /* border-color: #252830; */
+  border-color: #252830;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont;
+}
+
+.ag-fresh .ag-header-group-cell-with-group {
+  border-bottom: 1px solid #353942 !important;
+}
+
+.workList-td {
+  border: 2px solid #333 !important;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  /* border-radius: 10px; */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(256deg, #ffa41f 0%, #ff7030 99%, #ffa41f 100%) !important;
+  background: var(--color-bg-grad-2) !important;
+  background: #7a8288 !important;
+  /* border-radius: 10px; */
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--color-bg-grad-2) !important;
+  background: #7a8288 !important;
+  /* border-radius: 10px; */
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(256deg, #ffa41f 0%, #ff7030 99%, #ffa41f 100%) !important;
+  background: var(--color-bg-grad) !important;
+  background: #7a8288 !important;
+}
+
+.CalendarMonth_caption {
+  background-color: #3d3d3d !important;
+}
+
+.CalendarMonth {
+  background-color: #3d3d3d !important;
+}
+
+.DayPicker__horizontal {
+  background-color: black;
+}
+
+.CalendarMonthGrid {
+  background-color: black;
+}
+
+tr.select-none {
+  background: linear-gradient(256deg, #ffa41f 0%, #ff7030 99%, #ffa41f 100%) !important;
+  background: var(--color-bg-grad-2) !important;
+  background: #555555 !important;
+}
+
+.study-list-results {
+  height: 15rem;
+  overflow: auto;
+  margin-left: 5px;
+}
+
+.css-1w86f15 {
+  color: white;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  -webkit-text-fill-color: #fff !important;
+}
+
+th {
+  background-color: rgb(29, 29, 29) !important;
+}
+
+.css-18c75ho-MuiButtonBase-root-MuiTableSortLabel-root.Mui-active .MuiTableSortLabel-icon {
+  opacity: 1;
+  color: white;
+}
+
+.css-i4bv87-MuiSvgIcon-root {
+  color: white;
+}
+
+.css-1omuo8w-MuiToolbar-root {
+  background-color: rgb(29, 29, 29) !important;
+}
+
+.css-1x51dt5-MuiInputBase-input-MuiInput-input {
+  color: white;
+}
+
+.css-6hp17o-MuiList-root-MuiMenu-list {
+  background-color: black;
+  color: white;
+}
+
+.css-1x51dt5-MuiInputBase-input-MuiInput-input {
+  color: white;
+}
+
+td {
+  color: white !important;
+  padding: 0px !important;
+  border-right: 1px solid #898787 !important;
+  border-color: #898787 !important;
+
+}
+
+th {
+  color: white !important;
+  padding: 0px !important;
+}
+
+.css-1obmu95-MuiTableCell-root {
+  color: white;
+  border-right: 1px solid #898787 !important;
+}
+
+.css-1h2ots1-MuiTableRow-root {
+  background-color: black !important;
+  color: white;
+}
+
+.css-geclr4-MuiTableCell-root {
+  color: #fff !important;
+  border-right: 1px solid #898787 !important;
+}
+
+/* th:hover {
+  background: none !important
+} */
+
+/* tr:hover {
+  background:
+    linear-gradient(256deg, #ffa41f 0%, #ffa41f 99%, #ffa41f 100%) !important
+} */
+
+.css-1h2ots1-MuiTableRow-root {
+  color: white;
+}
+
+.css-16253fi-MuiTablePagination-root .MuiTablePagination-toolbar {
+  color: white;
+}
+
+.css-pqjvzy-MuiSvgIcon-root-MuiSelect-icon {
+  color: white !important;
+}
+
+.css-g2tram-MuiToolbar-root {
+  background-color: black !important;
+}
+
+.css-lcx9u9-MuiPaper-root {
+  border-radius: 0;
+  border: 0.5px solid #898787 !important;
+}
+
+.css-1hwt2tf-MuiPaper-root-MuiAlert-root {
+  background-color: black !important;
+}
+
+.css-4sd9dj {
+  padding: 0.5rem 1rem;
+  color: white;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  -webkit-text-fill-color: #fff !important;
+}
+
+.css-18n3qs7-MuiTableRow-root.Mui-selected {
+  background: linear-gradient(256deg, #ffa41f 0%, #ffa41f 99%, #ffa41f 100%) !important;
+  background: var(--color-bg-grad) !important;
+  background: #555555 !important;
+}
+
+th {
+  border-right: 1px solid #898787 !important;
+  border-top: 1px solid #898787 !important;
+
+}
+
+.css-1x51dt5-MuiInputBase-input-MuiInput-input {
+  color: white !important;
+}
+
+.css-wzg16j-MuiTypography-root {
+  color: white !important;
+}
+
+tr {
+  background-color: black !important;
+}
+
+.css-1omsyys-MuiButtonBase-root-MuiRadio-root {
+  color: white !important;
+}
+
+.css-1ps6ntt-MuiTableRow-root.Mui-selected {
+  background-color: #ffa41f !important;
+  background-color: var(--color-bg-grad) !important;
+  background: #555555 !important;
+}
+
+.css-80bag8-MuiTableRow-root {
+  background-color: black !important;
+}
+
+.bg-secondary-dark {
+  --tw-bg-opacity: 1;
+  background-color: #3d3d3d !important;
+}
+
+.MuiPaper-elevation {
+  color: white !important;
+  background-color: rgb(40, 44, 52) !important;
+}
+
+
+
+/* ================================================================== */
+
+.mainNav div div div span .MuiSvgIcon-root {
+  color: var(--color-primary) !important;
+  color: #ffff !important;
+  cursor: pointer !important;
+  height: 2.5rem !important;
+}
+.mainNav div div div div div button svg {
+  color: var(--color-primary) !important;
+  color: #ffff !important;
+  cursor: pointer !important;
+  height: 2.5rem !important;
+}
+/* =============================================================== */
+.mainNav {
+  width: 100%;
+  background-image: linear-gradient(#484e55, #3a3f44 60%, #313539) !important;
+}
+
+.mainNav div.container__1{
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+  width: 98% !important ;
+  margin: auto;
+  height: 3rem !important;
+}
+
+/* .mainNav .container__1 .left_logo{
+  position: none;
+  display: flex !important;
+  justify-content: flex-start;
+  gap: 2px;
+  align-items: center;
+  max-width: 35%;
+  height: 100%;
+  padding: .5rem;
+}
+.mainNav .container__1 .left_logo .logo_img{
+  width: 80% !important;
+  padding: .2rem;
+} */
+/* .mainNav .container__1 .left_logo .logo_icon{
+  height: 2.5rem !important;
+} */
+.mainNav .container__1 .left_logo .logo_img img{
+  width: 235px;
+  display: block;
+  object-fit: fill;
+}
+/* ========================================================= */
+.mainNav .container__1 .toggleIcon svg{
+  color: var(--color-primary) !important;
+  color: #ffff !important;
+  margin-right: .75rem !important;
+  cursor: pointer !important;
+  display: none !important;
+  position: relative;
+  z-index: 1000 ;
+  transition: all 0.5 ease-in;
+  -webkit-transition: all 0.5 ease-in;
+  -moz-transition: all 0.5 ease-in;
+  -ms-transition: all 0.5 ease-in;
+  -o-transition: all 0.5 ease-in;
+}
+
+.toggleIcon{
+  transition: all 0.25s ease-in;
+  -webkit-transition: all 0.25s ease-in;
+  -moz-transition: all 0.25s ease-in;
+  -ms-transition: all 0.25s ease-in;
+  -o-transition: all 0.25s ease-in;
+}
+
+
+@media only screen and (max-width: 740px ) {
+  .mainNav .container__1 .toggleIcon svg{
+    display: block !important;
+  }
+}
+/* =============================================================== */
+@media only screen and (max-width: 500px ) {
+  .mainNav .container__1 .left_logo .logo_img img{
+    width: 150px;
+  }
+  .mainNav div.container__1{
+    width: 100%;
+    margin: 0 ;
+  }
+}
+@media only screen and (max-width: 370px ) {
+  .mainNav .container__1 .left_logo .logo_img img{
+    width: 100px;
+  }
+}
+/* ================================================================ */
+.toolsNav{
+  /* position: none !important; */
+  max-height: fit-content;
+  width: 100%;
+  transition: all ease-in-out 0.5s;
+  -webkit-transition: all ease-in-out 0.5s;
+  -moz-transition: all ease-in-out 0.5s;
+  -ms-transition: all ease-in-out 0.5s;
+  -o-transition: all ease-in-out 0.5s;
+  /* padding: 0.3rem 0rem; */
+  /* overflow: hidden; */
+  background-image: linear-gradient(#484e55, #3a3f44 60%, #313539) !important;
+}
+
+.tools ,.tools .toolsCon ,.tools .toolsCon .toolsCon_2{
+  /* height: fit-content; */
+  width: 100%;
+  transition: all 0.25s ease-in;
+  -webkit-transition: all 0.25s ease-in;
+  -moz-transition: all 0.25s ease-in;
+  -ms-transition: all 0.25s ease-in;
+  -o-transition: all 0.25s ease-in;
+}
+
+.tools .toolsCon .toolsCon_2 .toolBar{
+  width: 100%;
+  display:grid !important;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(15,auto);
+  justify-content: center;
+  gap: .5rem;
+  padding: .5rem;
+  transition: all 0.25s ease-in;
+  -webkit-transition: all 0.25s ease-in;
+  -moz-transition: all 0.25s ease-in;
+  -ms-transition: all 0.25s ease-in;
+  -o-transition: all 0.25s ease-in;
+}
+
+@media only screen and (max-width: 740px ) {
+  .tools .toolsCon .toolsCon_2 .toolBar{
+    height: 7rem !important;
+    grid-template-rows: repeat(2,1fr);
+    grid-template-columns: repeat(7,auto);
+  }
+  .toolsNav{
+    height: 7rem !important;
+  }
+  .toolsCon_2 .toolBar{
+    top: 0rem;
+  }
+  .toolsCon{
+    top: 3rem !important;
+  }
+}
+@media only screen and (max-width: 430px ) {
+  .tools .toolsCon .toolsCon_2 .toolBar{
+    height: 10.5rem !important;
+    grid-template-rows: repeat(3,1fr);
+    grid-template-columns: repeat(5,auto);
+  }
+  .toolsNav{
+    height: 10.5rem !important;
+  }
+  .toolsCon_2 .toolBar{
+    top: 0rem;
+  }
+  .toolsCon{
+    top: 5rem !important;
+  }
+}
+.toolsNav .tools .toolsCon div span .MuiSvgIcon-root {
+  color: var(--color-primary) !important;
+  color: #ffff !important;
+  cursor: pointer !important;
+}
+.toolsNav .tools .toolsCon div div div button svg {
+  color: var(--color-primary) !important;
+  color: #ffff !important;
+  cursor: pointer !important;
+}
+/* ======================================================= */
+@media only screen and (max-width: 740px ) {
+  .closed{
+    /*display: none !important;
+    */max-height: 0;
+    overflow: hidden;
+    transition: all ease-in-out 0.5s;
+    -webkit-transition: all ease-in-out 0.5s;
+    -moz-transition: all ease-in-out 0.5s;
+    -ms-transition: all ease-in-out 0.5s;
+    -o-transition: all ease-in-out 0.5s;
+  }
+}
+
+.navIcons {
+  background-color: red !important;
+  color: red !important;
+}
+
+.Navtooltip {
+  background-color: #7a8288 !important;
+  color: #ffff !important;
+}
+.Navtooltip::before {
+  background-color: #7a8288 !important;
+  color: #ffff !important;
+}
+
+svg.h-full {
+  color: #fff !important;
+}
+svg.fill-current:active {
+  background-color: #7a8288 !important;
+}
+
+button.leading-none {
+  color: #fff !important;
+}
+
+svg.text-primary-active {
+  color: #ffff !important;
+}
+
+span {
+  color: #fff !important;
+}
+
+button.text-center:hover {
+  background-color: #7a8288 !important;
+  border-color: #7a8288 !important;
+}
+
+svg.fill-current:hover {
+  background-color: #7a8288 !important;
+  border-color: #7a8288 !important;
+  outline: none !important;
+}
+
+.NavtooltipSvg {
+  color: #7a8288 !important;
+}
+
+span.ag-header-group-text {
+  color: #ffff !important
+;
+}
+
+div.MuiDateCalendar-root {
+  background-color: #7a8288 !important;
+}
+
+/* .btn_icon:active {
+  background :#3D3D3D !important;
+}
+.btn_icon:active svg{
+  background :#3D3D3D !important;
+}
+
+
+button.btn_icon:active , button.btn_icon:active svg{
+  background :#3D3D3D !important;
+  background-color :#3D3D3D !important;
+} */
+
+
+button.bg-primary-light{
+  background-color :#777171 !important;
+}
+
+
+
+button.bg-primary-main {
+  background-color :#777171 !important;
+}
+
+
+.bg-customblue-40{
+  background-color :#777171 !important;
+}
+
+
+.bg-primary-light {
+  cursor: pointer !important;
+  background-color :#1C1E22 !important;
+}
+
+.border-primary-active {
+  background-color :#777171 !important;
+}
+
+
+.bg-secondary-dark{
+  cursor: pointer !important;
+  border: none !important;
+  outline: none !important;
+}
+
+
+.notifi{
+  background-color :#1C1E22 !important;
+  border-color: #fff !important;
+}
+
+.viewport-wrapper {
+  height: 82.5vh !important;
+}
+
+.main-v {
+  height: 85vh !important;
+  padding: 1px !important;
+  margin-top: 1px !important;
+}
+
+@media only screen and (max-width: 740px ) {
+  .main-v {
+    height: 90vh !important;
+  }
+  .viewport-wrapper {
+  height: 87vh !important;
+  }
+}
+
+
+div[data-cy="MoreTools-list-menu"]{
+  max-width: 10rem !important;
+  height: 65vh !important;
+  overflow: hidden !important;
+  border: 1px solid #fff;
+  border-radius: 15px !important;
+  -webkit-border-radius: 15px !important;
+  -moz-border-radius: 15px !important;
+  -ms-border-radius: 15px !important;
+  -o-border-radius: 15px !important;
+}
+div[data-cy="MoreTools-list-menu"] div.inner-list{
+  width: 100% !important;
+  height: 100% !important;
+  overflow-x: hidden !important;
+  overflow-y: scroll !important;
+}
+
+div[data-cy="MoreTools-list-menu"] div.inner-list div{
+  font-size: xx-small !important;
+}
+/* ========================================================================== */
+.ReactModal__Overlay{
+  width: 100% !important;
+  padding: 0!important;
+  margin: 0 !important;
+  height: 100vh !important;
+}
+
+.ReactModal__Content {
+  position: absolute!important ;
+  width: 90% !important;
+  max-width: 190% !important;
+  top: 10% !important;
+  max-height: 80% !important;
+  left: 5% !important;
+  right: 5% !important;
+  height: fit-content !important;
+}
+
+.ReactModal__Content header{
+  width: 100% !important;
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  border-radius: 15px !important;
+  -webkit-border-radius: 15px !important;
+  -moz-border-radius: 15px !important;
+  -ms-border-radius: 15px !important;
+  -o-border-radius: 15px !important;
+  margin-bottom: 2px !important;
+}
+.ReactModal__Content section.modal-content {
+  margin-top: 2px !important;
+  border-radius: 15px !important;
+  -webkit-border-radius: 15px !important;
+  -moz-border-radius: 15px !important;
+  -ms-border-radius: 15px !important;
+  -o-border-radius: 15px !important;
+  padding: 15px !important;
+  overflow-y: scroll !important;
+}
+/* .ReactModal__Content section div{
+  width: 100% !important;
+  padding: 8px !important;
+} */
+.ReactModal__Content section.modal-content div:nth-child(4)  div.grid_ div{
+  display: grid !important;
+  grid-template-columns: repeat(2,1fr) !important;
+  justify-content: flex-start;
+  width: 100% !important;
+  /* padding:2px !important; */
+  /* grid-template-rows: repeat(m); */
+}
+.ReactModal__Content section.modal-content div:nth-child(4)  div.grid_ div div{
+  display: block !important;
+  width: 100% !important;
+  /* justify-content: flex-start; */
+}
+.ReactModal__Content section.modal-content div:nth-child(5){
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px !important;
+}
+
+@media only screen and (max-width: 740px ) {
+  .ReactModal__Content section.modal-content div:nth-child(4)  div.grid_ div{
+    grid-template-columns: 1fr !important;
+  }
+  /* .ReactModal__Content section div:nth-child(4) div:nth-child(1) div div{
+    width: 100% !important;
+  } */
+  .ReactModal__Content section.modal-content div:nth-child(5){
+    flex-direction: column !important;
+  }
+
+  .ReactModal__Content section.modal-content div:nth-child(2) div.items-center{
+    align-items: flex-start !important;
+    flex-direction: column !important;
+    gap: 5px !important;
+  }
+
+  section.modal-content div[id="abId0.9856086964582165"] div:nth-child(2) div{
+    display: block;
+    width: 100% !important;
+  }
+  section.modal-content div[id="abId0.9856086964582165"] div:nth-child(2) div input{
+    display: block;
+    width: 100% !important;
+  }
+  section.modal-content div[id="abId0.9856086964582165"] div:nth-child(2) div label{
+    display: block;
+    width: 100% !important;
+  }
 }

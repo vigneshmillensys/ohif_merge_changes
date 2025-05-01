@@ -476,7 +476,7 @@ function WorkList({
       onClick: () =>
         show({
           content: AboutModal as React.ComponentType,
-          title: t('AboutModal:About OHIF Viewer'),
+          title: t('AboutModal:About Millensys Viewer'),
           containerClassName: 'max-w-md ',
         }),
     },
